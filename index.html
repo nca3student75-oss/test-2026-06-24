@@ -6,11 +6,11 @@
 <meta name="theme-color" content="#07100c">
 <title>방공호 통신망</title>
 <style>
-:root{color-scheme:dark;--bg:#07100c;--panel:#0d1712;--line:#355946;--text:#d8e8dc;--muted:#91a99a;--crt:#98ffb3;--amber:#e1b66a}
+:root{color-scheme:dark;--bg:#07100c;--panel:#0d1712;--line:#355946;--text:#d8e8dc;--muted:#91a99a;--crt:#98ffb3;--amber:#e1b66a;--danger:#ff9d8f}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#13241a 0,#07100c 50%,#040806 100%);color:var(--text);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;min-height:100vh}
 body:before{content:"";position:fixed;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(255,255,255,.025) 0 1px,transparent 1px 4px);mix-blend-mode:screen;opacity:.25}
-.shell{width:min(760px,100%);margin:auto;padding:18px 14px 40px}.panel{background:linear-gradient(180deg,#101c16,#0a120e);border:1px solid var(--line);border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.35),inset 0 0 0 1px rgba(255,255,255,.02);padding:18px}.eyebrow{font-size:11px;letter-spacing:.16em;color:var(--amber);font-weight:700}.masthead h1{margin:.35rem 0 .25rem;font-size:clamp(28px,7vw,42px)}.lede{margin:0;color:var(--muted);line-height:1.55}.status{display:flex;gap:8px;align-items:center;margin:14px 0 0;color:var(--crt);font-size:13px}.dot{width:8px;height:8px;border-radius:50%;background:var(--crt);box-shadow:0 0 12px var(--crt)}
-form{margin-top:14px}.field{margin:0 0 14px}label{display:block;margin-bottom:6px;font-weight:700;font-size:14px}.hint{font-size:12px;color:var(--muted);margin-top:5px}input,select,textarea{width:100%;border:1px solid #2b4838;border-radius:10px;background:#07100c;color:var(--text);padding:12px 13px;font:inherit;outline:none}input:focus,select:focus,textarea:focus{border-color:#5a936e;box-shadow:0 0 0 3px rgba(90,147,110,.15)}textarea{min-height:120px;resize:vertical}.chips{display:grid;grid-template-columns:1fr 1fr;gap:8px}.chip{display:flex;gap:8px;align-items:center;border:1px solid #263d31;border-radius:10px;padding:10px;background:#0a120e;font-size:13px}.chip input{width:auto}.send{width:100%;border:1px solid #5f9872;border-radius:12px;padding:13px 16px;background:#183522;color:#dfffe7;font-weight:800;font-size:16px;cursor:pointer}.send:active{transform:translateY(1px)}.notice{margin-top:14px;padding:12px 14px;border-radius:10px;border:1px dashed #5b6540;color:#d7c98a;background:#17180d;font-size:13px;line-height:1.5}.thanks{display:none;margin-top:14px;padding:14px;border:1px solid #3f7751;border-radius:10px;background:#0d2115;color:var(--crt);font-weight:700}.foot{margin-top:14px;color:var(--muted);font-size:12px;text-align:center}@media(max-width:520px){.shell{padding:10px 10px 28px}.panel{padding:15px;border-radius:13px}.chips{grid-template-columns:1fr}.masthead h1{font-size:31px}}
+.shell{width:min(760px,100%);margin:auto;padding:10px 10px 30px}.panel{background:linear-gradient(180deg,#101c16,#0a120e);border:1px solid var(--line);border-radius:14px;box-shadow:0 12px 40px rgba(0,0,0,.35),inset 0 0 0 1px rgba(255,255,255,.02);padding:16px}.eyebrow{font-size:10px;letter-spacing:.14em;color:var(--amber);font-weight:700}.masthead h1{margin:.3rem 0 .2rem;font-size:clamp(28px,7vw,40px)}.lede{margin:0;color:var(--muted);line-height:1.48;font-size:14px}.status{display:flex;gap:8px;align-items:center;margin:11px 0 0;color:var(--crt);font-size:12px}.dot{width:8px;height:8px;border-radius:50%;background:var(--crt);box-shadow:0 0 12px var(--crt)}
+form{margin-top:13px}.field{margin:0 0 12px}label{display:block;margin-bottom:5px;font-weight:700;font-size:14px}.hint{font-size:11px;color:var(--muted);margin-top:4px}input,select,textarea{width:100%;border:1px solid #2b4838;border-radius:9px;background:#07100c;color:var(--text);padding:11px 12px;font:inherit;outline:none}input:focus,select:focus,textarea:focus{border-color:#5a936e;box-shadow:0 0 0 3px rgba(90,147,110,.15)}textarea{min-height:96px;resize:vertical}.chips{display:grid;grid-template-columns:1fr 1fr;gap:7px}.chip{display:flex;gap:8px;align-items:center;border:1px solid #263d31;border-radius:9px;padding:9px;background:#0a120e;font-size:12px}.chip input{width:auto}.send{width:100%;border:1px solid #5f9872;border-radius:11px;padding:13px 16px;background:#183522;color:#dfffe7;font-weight:800;font-size:16px;cursor:pointer}.send:disabled{opacity:.58;cursor:wait}.msg{display:none;margin-top:12px;padding:12px 13px;border-radius:9px;font-size:13px;line-height:1.45}.ok{border:1px solid #3f7751;background:#0d2115;color:var(--crt)}.err{border:1px solid #7a4a43;background:#24110e;color:var(--danger)}.setup{margin-top:12px;padding:11px 12px;border-radius:9px;border:1px dashed #5b6540;color:#d7c98a;background:#17180d;font-size:12px;line-height:1.45}.foot{margin-top:12px;color:var(--muted);font-size:11px;text-align:center}@media(max-width:520px){.chips{grid-template-columns:1fr}.masthead h1{font-size:30px}.panel{padding:14px}.shell{padding-top:8px}}
 </style>
 </head>
 <body>
@@ -19,8 +19,8 @@ form{margin-top:14px}.field{margin:0 0 14px}label{display:block;margin-bottom:6p
 <header class="masthead">
 <div class="eyebrow">READY FOR APOCALYPSE · COMMON BUNKER</div>
 <h1>📻 방공호 통신망</h1>
-<p class="lede">방공호 밖에서 들어오는 짧은 통신을 기록합니다. 플레이 소감, 기억에 남은 장면, 개선 의견을 자유롭게 남겨주세요.</p>
-<div class="status"><span class="dot"></span> 통신 채널 대기 중</div>
+<p class="lede">플레이 소감, 기억에 남은 장면, 개선 의견을 짧게 남겨주세요. 호출명은 익명으로 적어도 됩니다.</p>
+<div class="status"><span class="dot"></span><span id="channelState">통신 채널 준비 중</span></div>
 </header>
 <form id="guestbookForm">
 <div class="field"><label for="callsign">호출명</label><input id="callsign" name="callsign" maxlength="30" placeholder="익명의 생존자" autocomplete="nickname"><div class="hint">실명을 적지 않아도 됩니다.</div></div>
@@ -28,15 +28,46 @@ form{margin-top:14px}.field{margin:0 0 14px}label{display:block;margin-bottom:6p
 <div class="field"><label for="message">통신 내용 *</label><textarea id="message" name="message" required maxlength="800" placeholder="짧은 한마디도 좋습니다."></textarea></div>
 <div class="field"><label>인상적이었던 부분</label><div class="chips"><label class="chip"><input type="checkbox" name="highlight" value="위험도·핵폭발">위험도·핵폭발</label><label class="chip"><input type="checkbox" name="highlight" value="방공호 운영">방공호 운영</label><label class="chip"><input type="checkbox" name="highlight" value="동료 대화">동료 대화</label><label class="chip"><input type="checkbox" name="highlight" value="연구·탈출">연구·탈출</label><label class="chip"><input type="checkbox" name="highlight" value="컷씬·연출">컷씬·연출</label><label class="chip"><input type="checkbox" name="highlight" value="제작 과정">제작 과정</label></div></div>
 <div class="field"><label for="feedback">개선 의견</label><textarea id="feedback" name="feedback" maxlength="800" placeholder="선택 사항입니다."></textarea></div>
-<button class="send" type="submit">📡 통신 보내기</button>
-<div class="thanks" id="thanks">통신이 기기에 저장되었습니다. 실제 공개 방명록으로 보내려면 저장 서비스 연결이 한 단계 더 필요합니다.</div>
-<div class="notice"><strong>현재 테스트 모드</strong><br>이 페이지는 모바일 입력과 화면 디자인을 확인하기 위한 프로토타입입니다. 지금은 제출 내용이 이 기기의 브라우저에만 임시 저장됩니다. GitHub Pages 자체에는 서버 저장 기능이 없으므로, 실제 방명록 공개 전에는 Formspree·Google Forms·Supabase 같은 저장 서비스 중 하나를 연결해야 합니다.</div>
+<input type="hidden" name="source" value="Ready for Apocalypse Guestbook">
+<button class="send" id="sendButton" type="submit">📡 통신 보내기</button>
+<div class="msg ok" id="thanks">📡 통신이 정상적으로 전송되었습니다. 기록을 남겨주셔서 감사합니다.</div>
+<div class="msg err" id="errorBox">⚠ 통신 전송에 실패했습니다. 잠시 후 다시 시도해 주세요.</div>
+<div class="setup" id="setupBox"><strong>관리자 설정 대기</strong><br>방명록 화면은 준비되었습니다. 외부 저장을 시작하려면 Formspree의 폼 주소 한 개만 연결하면 됩니다.</div>
 </form>
 </section>
 <div class="foot">☢ 레디 포 아포칼립스: 공동 방공호</div>
 </main>
 <script>
-const form=document.getElementById('guestbookForm');const thanks=document.getElementById('thanks');form.addEventListener('submit',e=>{e.preventDefault();const fd=new FormData(form);const data={callsign:fd.get('callsign')||'익명의 생존자',route:fd.get('route'),message:fd.get('message'),highlights:fd.getAll('highlight'),feedback:fd.get('feedback'),createdAt:new Date().toISOString()};const old=JSON.parse(localStorage.getItem('bunker_guestbook')||'[]');old.unshift(data);localStorage.setItem('bunker_guestbook',JSON.stringify(old.slice(0,50)));thanks.style.display='block';form.reset();thanks.scrollIntoView({behavior:'smooth',block:'nearest'});});
+// Formspree에서 발급된 주소를 아래 따옴표 안에 넣으면 즉시 실제 제출 모드가 됩니다.
+// 예: https://formspree.io/f/xxxxxxxx
+const FORM_ENDPOINT = '';
+
+const form=document.getElementById('guestbookForm');
+const thanks=document.getElementById('thanks');
+const errorBox=document.getElementById('errorBox');
+const sendButton=document.getElementById('sendButton');
+const setupBox=document.getElementById('setupBox');
+const channelState=document.getElementById('channelState');
+
+if(FORM_ENDPOINT){setupBox.style.display='none';channelState.textContent='외부 통신 채널 연결됨';}
+else{channelState.textContent='외부 통신 채널 설정 대기';}
+
+form.addEventListener('submit',async e=>{
+ e.preventDefault();
+ thanks.style.display='none';errorBox.style.display='none';
+ if(!FORM_ENDPOINT){setupBox.style.display='block';setupBox.scrollIntoView({behavior:'smooth',block:'nearest'});return;}
+ const fd=new FormData(form);
+ if(!fd.get('callsign')) fd.set('callsign','익명의 생존자');
+ fd.set('highlights',fd.getAll('highlight').join(', ')||'선택 없음');
+ fd.delete('highlight');
+ sendButton.disabled=true;sendButton.textContent='📡 전송 중...';
+ try{
+  const res=await fetch(FORM_ENDPOINT,{method:'POST',body:fd,headers:{Accept:'application/json'}});
+  if(!res.ok) throw new Error('submit failed');
+  form.reset();thanks.style.display='block';thanks.scrollIntoView({behavior:'smooth',block:'nearest'});
+ }catch(err){errorBox.style.display='block';errorBox.scrollIntoView({behavior:'smooth',block:'nearest'});}
+ finally{sendButton.disabled=false;sendButton.textContent='📡 통신 보내기';}
+});
 </script>
 </body>
 </html>
