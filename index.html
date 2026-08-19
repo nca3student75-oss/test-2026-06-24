@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#07100c">
+<title>방공호 통신망</title>
+<style>
+:root{color-scheme:dark;--bg:#07100c;--panel:#0d1712;--line:#355946;--text:#d8e8dc;--muted:#91a99a;--crt:#98ffb3;--amber:#e1b66a}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#13241a 0,#07100c 50%,#040806 100%);color:var(--text);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;min-height:100vh}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(255,255,255,.025) 0 1px,transparent 1px 4px);mix-blend-mode:screen;opacity:.25}
+.shell{width:min(760px,100%);margin:auto;padding:18px 14px 40px}.panel{background:linear-gradient(180deg,#101c16,#0a120e);border:1px solid var(--line);border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.35),inset 0 0 0 1px rgba(255,255,255,.02);padding:18px}.eyebrow{font-size:11px;letter-spacing:.16em;color:var(--amber);font-weight:700}.masthead h1{margin:.35rem 0 .25rem;font-size:clamp(28px,7vw,42px)}.lede{margin:0;color:var(--muted);line-height:1.55}.status{display:flex;gap:8px;align-items:center;margin:14px 0 0;color:var(--crt);font-size:13px}.dot{width:8px;height:8px;border-radius:50%;background:var(--crt);box-shadow:0 0 12px var(--crt)}
+form{margin-top:14px}.field{margin:0 0 14px}label{display:block;margin-bottom:6px;font-weight:700;font-size:14px}.hint{font-size:12px;color:var(--muted);margin-top:5px}input,select,textarea{width:100%;border:1px solid #2b4838;border-radius:10px;background:#07100c;color:var(--text);padding:12px 13px;font:inherit;outline:none}input:focus,select:focus,textarea:focus{border-color:#5a936e;box-shadow:0 0 0 3px rgba(90,147,110,.15)}textarea{min-height:120px;resize:vertical}.chips{display:grid;grid-template-columns:1fr 1fr;gap:8px}.chip{display:flex;gap:8px;align-items:center;border:1px solid #263d31;border-radius:10px;padding:10px;background:#0a120e;font-size:13px}.chip input{width:auto}.send{width:100%;border:1px solid #5f9872;border-radius:12px;padding:13px 16px;background:#183522;color:#dfffe7;font-weight:800;font-size:16px;cursor:pointer}.send:active{transform:translateY(1px)}.notice{margin-top:14px;padding:12px 14px;border-radius:10px;border:1px dashed #5b6540;color:#d7c98a;background:#17180d;font-size:13px;line-height:1.5}.thanks{display:none;margin-top:14px;padding:14px;border:1px solid #3f7751;border-radius:10px;background:#0d2115;color:var(--crt);font-weight:700}.foot{margin-top:14px;color:var(--muted);font-size:12px;text-align:center}@media(max-width:520px){.shell{padding:10px 10px 28px}.panel{padding:15px;border-radius:13px}.chips{grid-template-columns:1fr}.masthead h1{font-size:31px}}
+</style>
+</head>
+<body>
+<main class="shell">
+<section class="panel">
+<header class="masthead">
+<div class="eyebrow">READY FOR APOCALYPSE · COMMON BUNKER</div>
+<h1>📻 방공호 통신망</h1>
+<p class="lede">방공호 밖에서 들어오는 짧은 통신을 기록합니다. 플레이 소감, 기억에 남은 장면, 개선 의견을 자유롭게 남겨주세요.</p>
+<div class="status"><span class="dot"></span> 통신 채널 대기 중</div>
+</header>
+<form id="guestbookForm">
+<div class="field"><label for="callsign">호출명</label><input id="callsign" name="callsign" maxlength="30" placeholder="익명의 생존자" autocomplete="nickname"><div class="hint">실명을 적지 않아도 됩니다.</div></div>
+<div class="field"><label for="route">어디에서 오셨나요?</label><select id="route" name="route"><option>웹게임</option><option>오프라인 보드게임</option><option>제작일지</option><option>발표·전시</option><option>이미지·디자인</option><option>기타</option></select></div>
+<div class="field"><label for="message">통신 내용 *</label><textarea id="message" name="message" required maxlength="800" placeholder="짧은 한마디도 좋습니다."></textarea></div>
+<div class="field"><label>인상적이었던 부분</label><div class="chips"><label class="chip"><input type="checkbox" name="highlight" value="위험도·핵폭발">위험도·핵폭발</label><label class="chip"><input type="checkbox" name="highlight" value="방공호 운영">방공호 운영</label><label class="chip"><input type="checkbox" name="highlight" value="동료 대화">동료 대화</label><label class="chip"><input type="checkbox" name="highlight" value="연구·탈출">연구·탈출</label><label class="chip"><input type="checkbox" name="highlight" value="컷씬·연출">컷씬·연출</label><label class="chip"><input type="checkbox" name="highlight" value="제작 과정">제작 과정</label></div></div>
+<div class="field"><label for="feedback">개선 의견</label><textarea id="feedback" name="feedback" maxlength="800" placeholder="선택 사항입니다."></textarea></div>
+<button class="send" type="submit">📡 통신 보내기</button>
+<div class="thanks" id="thanks">통신이 기기에 저장되었습니다. 실제 공개 방명록으로 보내려면 저장 서비스 연결이 한 단계 더 필요합니다.</div>
+<div class="notice"><strong>현재 테스트 모드</strong><br>이 페이지는 모바일 입력과 화면 디자인을 확인하기 위한 프로토타입입니다. 지금은 제출 내용이 이 기기의 브라우저에만 임시 저장됩니다. GitHub Pages 자체에는 서버 저장 기능이 없으므로, 실제 방명록 공개 전에는 Formspree·Google Forms·Supabase 같은 저장 서비스 중 하나를 연결해야 합니다.</div>
+</form>
+</section>
+<div class="foot">☢ 레디 포 아포칼립스: 공동 방공호</div>
+</main>
+<script>
+const form=document.getElementById('guestbookForm');const thanks=document.getElementById('thanks');form.addEventListener('submit',e=>{e.preventDefault();const fd=new FormData(form);const data={callsign:fd.get('callsign')||'익명의 생존자',route:fd.get('route'),message:fd.get('message'),highlights:fd.getAll('highlight'),feedback:fd.get('feedback'),createdAt:new Date().toISOString()};const old=JSON.parse(localStorage.getItem('bunker_guestbook')||'[]');old.unshift(data);localStorage.setItem('bunker_guestbook',JSON.stringify(old.slice(0,50)));thanks.style.display='block';form.reset();thanks.scrollIntoView({behavior:'smooth',block:'nearest'});});
+</script>
+</body>
+</html>
