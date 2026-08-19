@@ -10,7 +10,7 @@
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#13241a 0,#07100c 50%,#040806 100%);color:var(--text);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;min-height:100vh}
 body:before{content:"";position:fixed;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(255,255,255,.025) 0 1px,transparent 1px 4px);mix-blend-mode:screen;opacity:.25}
 .shell{width:min(760px,100%);margin:auto;padding:10px 10px 30px}.panel{background:linear-gradient(180deg,#101c16,#0a120e);border:1px solid var(--line);border-radius:14px;box-shadow:0 12px 40px rgba(0,0,0,.35),inset 0 0 0 1px rgba(255,255,255,.02);padding:16px}.eyebrow{font-size:10px;letter-spacing:.14em;color:var(--amber);font-weight:700}.masthead h1{margin:.3rem 0 .2rem;font-size:clamp(28px,7vw,40px)}.lede{margin:0;color:var(--muted);line-height:1.48;font-size:14px}.status{display:flex;gap:8px;align-items:center;margin:11px 0 0;color:var(--crt);font-size:12px}.dot{width:8px;height:8px;border-radius:50%;background:var(--crt);box-shadow:0 0 12px var(--crt)}
-form{margin-top:13px}.field{margin:0 0 12px}label{display:block;margin-bottom:5px;font-weight:700;font-size:14px}.hint{font-size:11px;color:var(--muted);margin-top:4px}input,select,textarea{width:100%;border:1px solid #2b4838;border-radius:9px;background:#07100c;color:var(--text);padding:11px 12px;font:inherit;outline:none}input:focus,select:focus,textarea:focus{border-color:#5a936e;box-shadow:0 0 0 3px rgba(90,147,110,.15)}textarea{min-height:96px;resize:vertical}.chips{display:grid;grid-template-columns:1fr 1fr;gap:7px}.chip{display:flex;gap:8px;align-items:center;border:1px solid #263d31;border-radius:9px;padding:9px;background:#0a120e;font-size:12px}.chip input{width:auto}.send{width:100%;border:1px solid #5f9872;border-radius:11px;padding:13px 16px;background:#183522;color:#dfffe7;font-weight:800;font-size:16px;cursor:pointer}.send:disabled{opacity:.58;cursor:wait}.msg{display:none;margin-top:12px;padding:12px 13px;border-radius:9px;font-size:13px;line-height:1.45}.ok{border:1px solid #3f7751;background:#0d2115;color:var(--crt)}.err{border:1px solid #7a4a43;background:#24110e;color:var(--danger)}.setup{margin-top:12px;padding:11px 12px;border-radius:9px;border:1px dashed #5b6540;color:#d7c98a;background:#17180d;font-size:12px;line-height:1.45}.foot{margin-top:12px;color:var(--muted);font-size:11px;text-align:center}@media(max-width:520px){.chips{grid-template-columns:1fr}.masthead h1{font-size:30px}.panel{padding:14px}.shell{padding-top:8px}}
+form{margin-top:13px}.field{margin:0 0 12px}label{display:block;margin-bottom:5px;font-weight:700;font-size:14px}.hint{font-size:11px;color:var(--muted);margin-top:4px}input,select,textarea{width:100%;border:1px solid #2b4838;border-radius:9px;background:#07100c;color:var(--text);padding:11px 12px;font:inherit;outline:none}input:focus,select:focus,textarea:focus{border-color:#5a936e;box-shadow:0 0 0 3px rgba(90,147,110,.15)}textarea{min-height:96px;resize:vertical}.chips{display:grid;grid-template-columns:1fr 1fr;gap:7px}.chip{display:flex;gap:8px;align-items:center;border:1px solid #263d31;border-radius:9px;padding:9px;background:#0a120e;font-size:12px}.chip input{width:auto}.send{width:100%;border:1px solid #5f9872;border-radius:11px;padding:13px 16px;background:#183522;color:#dfffe7;font-weight:800;font-size:16px;cursor:pointer}.send:disabled{opacity:.58;cursor:wait}.msg{display:none;margin-top:12px;padding:12px 13px;border-radius:9px;font-size:13px;line-height:1.45}.ok{border:1px solid #3f7751;background:#0d2115;color:var(--crt)}.err{border:1px solid #7a4a43;background:#24110e;color:var(--danger)}.foot{margin-top:12px;color:var(--muted);font-size:11px;text-align:center}@media(max-width:520px){.chips{grid-template-columns:1fr}.masthead h1{font-size:30px}.panel{padding:14px}.shell{padding-top:8px}}
 </style>
 </head>
 <body>
@@ -20,53 +20,63 @@ form{margin-top:13px}.field{margin:0 0 12px}label{display:block;margin-bottom:5p
 <div class="eyebrow">READY FOR APOCALYPSE · COMMON BUNKER</div>
 <h1>📻 방공호 통신망</h1>
 <p class="lede">플레이 소감, 기억에 남은 장면, 개선 의견을 짧게 남겨주세요. 호출명은 익명으로 적어도 됩니다.</p>
-<div class="status"><span class="dot"></span><span id="channelState">통신 채널 준비 중</span></div>
+<div class="status"><span class="dot"></span><span id="channelState">Google Sheets 통신 채널 연결됨</span></div>
 </header>
-<form id="guestbookForm">
+<form id="guestbookForm" method="POST" target="submitFrame" action="https://script.google.com/macros/s/AKfycbyl-6KY-0UAutPh0u-C5XYCtboYzyiEUWrfmbyXUGJ_nWSnoZ7ADt8r7Fo76GeBItfUBw/exec">
 <div class="field"><label for="callsign">호출명</label><input id="callsign" name="callsign" maxlength="30" placeholder="익명의 생존자" autocomplete="nickname"><div class="hint">실명을 적지 않아도 됩니다.</div></div>
 <div class="field"><label for="route">어디에서 오셨나요?</label><select id="route" name="route"><option>웹게임</option><option>오프라인 보드게임</option><option>제작일지</option><option>발표·전시</option><option>이미지·디자인</option><option>기타</option></select></div>
 <div class="field"><label for="message">통신 내용 *</label><textarea id="message" name="message" required maxlength="800" placeholder="짧은 한마디도 좋습니다."></textarea></div>
 <div class="field"><label>인상적이었던 부분</label><div class="chips"><label class="chip"><input type="checkbox" name="highlight" value="위험도·핵폭발">위험도·핵폭발</label><label class="chip"><input type="checkbox" name="highlight" value="방공호 운영">방공호 운영</label><label class="chip"><input type="checkbox" name="highlight" value="동료 대화">동료 대화</label><label class="chip"><input type="checkbox" name="highlight" value="연구·탈출">연구·탈출</label><label class="chip"><input type="checkbox" name="highlight" value="컷씬·연출">컷씬·연출</label><label class="chip"><input type="checkbox" name="highlight" value="제작 과정">제작 과정</label></div></div>
 <div class="field"><label for="feedback">개선 의견</label><textarea id="feedback" name="feedback" maxlength="800" placeholder="선택 사항입니다."></textarea></div>
-<input type="hidden" name="source" value="Ready for Apocalypse Guestbook">
+<input type="hidden" id="highlights" name="highlights" value="선택 없음">
+<input type="hidden" name="source" value="GitHub Pages">
+<input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;opacity:0" aria-hidden="true">
 <button class="send" id="sendButton" type="submit">📡 통신 보내기</button>
-<div class="msg ok" id="thanks">📡 통신이 정상적으로 전송되었습니다. 기록을 남겨주셔서 감사합니다.</div>
-<div class="msg err" id="errorBox">⚠ 통신 전송에 실패했습니다. 잠시 후 다시 시도해 주세요.</div>
-<div class="setup" id="setupBox"><strong>관리자 설정 대기</strong><br>방명록 화면은 준비되었습니다. 외부 저장을 시작하려면 Formspree의 폼 주소 한 개만 연결하면 됩니다.</div>
+<div class="msg ok" id="thanks">📡 통신이 전송되었습니다. 기록을 남겨주셔서 감사합니다.</div>
+<div class="msg err" id="errorBox">⚠ 통신 내용을 입력해 주세요.</div>
 </form>
+<iframe name="submitFrame" id="submitFrame" title="방명록 전송" style="display:none"></iframe>
 </section>
 <div class="foot">☢ 레디 포 아포칼립스: 공동 방공호</div>
 </main>
 <script>
-// Formspree에서 발급된 주소를 아래 따옴표 안에 넣으면 즉시 실제 제출 모드가 됩니다.
-// 예: https://formspree.io/f/xxxxxxxx
-const FORM_ENDPOINT = '';
-
 const form=document.getElementById('guestbookForm');
+const callsign=document.getElementById('callsign');
+const message=document.getElementById('message');
+const highlights=document.getElementById('highlights');
 const thanks=document.getElementById('thanks');
 const errorBox=document.getElementById('errorBox');
 const sendButton=document.getElementById('sendButton');
-const setupBox=document.getElementById('setupBox');
-const channelState=document.getElementById('channelState');
 
-if(FORM_ENDPOINT){setupBox.style.display='none';channelState.textContent='외부 통신 채널 연결됨';}
-else{channelState.textContent='외부 통신 채널 설정 대기';}
+form.addEventListener('submit',e=>{
+  e.preventDefault();
+  thanks.style.display='none';
+  errorBox.style.display='none';
 
-form.addEventListener('submit',async e=>{
- e.preventDefault();
- thanks.style.display='none';errorBox.style.display='none';
- if(!FORM_ENDPOINT){setupBox.style.display='block';setupBox.scrollIntoView({behavior:'smooth',block:'nearest'});return;}
- const fd=new FormData(form);
- if(!fd.get('callsign')) fd.set('callsign','익명의 생존자');
- fd.set('highlights',fd.getAll('highlight').join(', ')||'선택 없음');
- fd.delete('highlight');
- sendButton.disabled=true;sendButton.textContent='📡 전송 중...';
- try{
-  const res=await fetch(FORM_ENDPOINT,{method:'POST',body:fd,headers:{Accept:'application/json'}});
-  if(!res.ok) throw new Error('submit failed');
-  form.reset();thanks.style.display='block';thanks.scrollIntoView({behavior:'smooth',block:'nearest'});
- }catch(err){errorBox.style.display='block';errorBox.scrollIntoView({behavior:'smooth',block:'nearest'});}
- finally{sendButton.disabled=false;sendButton.textContent='📡 통신 보내기';}
+  if(!message.value.trim()){
+    errorBox.style.display='block';
+    message.focus();
+    return;
+  }
+
+  if(!callsign.value.trim()) callsign.value='익명의 생존자';
+
+  const selected=[...form.querySelectorAll('input[name="highlight"]:checked')].map(el=>el.value);
+  highlights.value=selected.join(', ')||'선택 없음';
+
+  sendButton.disabled=true;
+  sendButton.textContent='📡 전송 중...';
+
+  form.submit();
+
+  setTimeout(()=>{
+    form.reset();
+    highlights.value='선택 없음';
+    thanks.style.display='block';
+    sendButton.disabled=false;
+    sendButton.textContent='📡 통신 보내기';
+    thanks.scrollIntoView({behavior:'smooth',block:'nearest'});
+  },700);
 });
 </script>
 </body>
